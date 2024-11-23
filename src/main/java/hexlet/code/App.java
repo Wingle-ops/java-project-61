@@ -12,19 +12,24 @@ public class App {
                 1 - Greet
                 0 - Exit
                 2 - Even
+                3 - Calc
                 Your choice:\s""");
         int num = scan.nextInt();
+        System.out.println();
 
         switch (num) {
             case 0:
                 break;
             case 1:
-                System.out.println();
                 Cli.name();
                 break;
             case 2:
                 Cli.name();
                 Even.getGame();
+                break;
+            case 3:
+                Cli.name();
+                Calc.getGame();
                 break;
             default:
                 System.out.println("Ничего не выбрано или выбран неверный вариант.");

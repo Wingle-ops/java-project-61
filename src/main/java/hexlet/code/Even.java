@@ -6,26 +6,20 @@ import java.util.Scanner;
 public class Even {
 
     static void getGame() {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int i = 0;
-        int j = 0;
         int count = 3;
-        while (i < count) {
-            Scanner scan = new Scanner(System.in);
-            int rand = randomNum();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-            String znach = rand % 2 == 0 ? "yes" : "no";
+        while (i < count) {
+            int rand = randomNum();
+            String otvet = rand % 2 == 0 ? "yes" : "no";
             System.out.print("Question: " + rand + "\n" + "Yor answer: ");
             String answer = scan.nextLine();
-            if (znach.equals(answer)) {
-                System.out.println("Correct!");
-                i++;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + znach + "'");
-                break;
-            }
-            System.out.println("Congratulations, " + Cli.nameUser);
+            Engine.setEnd(otvet, answer);
+            i++;
         }
+        System.out.println("Congratulations, " + Cli.nameUser);
     }
 
     static int randomNum() {
