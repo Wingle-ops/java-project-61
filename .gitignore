@@ -11,6 +11,9 @@ build/
 .idea/compiler.xml
 .idea/libraries/
 *.vscode
+*.idea
+*.gitignore
+README.md
 *.iws
 *.iml
 *.ipr
