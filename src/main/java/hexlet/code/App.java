@@ -10,9 +10,10 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.print("""
                 1 - Greet
-                0 - Exit
                 2 - Even
                 3 - Calc
+                4 - GCD
+                0 - Exit
                 Your choice:\s""");
         int num = scan.nextInt();
         System.out.println();
@@ -30,6 +31,10 @@ public class App {
             case 3:
                 Cli.name();
                 Calc.getGame();
+                break;
+            case 4:
+                Cli.name();
+                Gcd.getGame();
                 break;
             default:
                 System.out.println("Ничего не выбрано или выбран неверный вариант.");

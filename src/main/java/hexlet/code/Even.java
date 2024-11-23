@@ -16,7 +16,7 @@ public class Even {
             String otvet = rand % 2 == 0 ? "yes" : "no";
             System.out.print("Question: " + rand + "\n" + "Yor answer: ");
             String answer = scan.nextLine();
-            Engine.setEnd(otvet, answer);
+            Engine.getEnd(otvet, answer);
             i++;
         }
         System.out.println("Congratulations, " + Cli.nameUser);
@@ -24,7 +24,7 @@ public class Even {
 
     static int randomNum() {
         Random rand = new Random();
-        return rand.nextInt(100);
+        return rand.nextInt(10) + 1;
     }
 
 }

@@ -20,10 +20,9 @@ public class Calc {
             getCount();
             System.out.println("Question: " + number1 + " " + znachenie + " " + number2);
             System.out.print("Your answer: ");
-            int answer = scan.nextInt();
-            String answerStr = String.valueOf(answer);
+            String answerStr = scan.nextLine();
             String otvetStr = String.valueOf(otvet);
-            Engine.setEnd(otvetStr, answerStr);
+            Engine.getEnd(otvetStr, answerStr);
             i++;
         }
         System.out.println("Congratulations, " + Cli.nameUser);
