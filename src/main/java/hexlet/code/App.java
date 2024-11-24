@@ -13,6 +13,7 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progressia
                 0 - Exit
                 Your choice:\s""");
         int num = scan.nextInt();
@@ -35,6 +36,10 @@ public class App {
             case 4:
                 Cli.name();
                 Gcd.getGame();
+                break;
+            case 5:
+                Cli.name();
+                Progressia.getGame();
                 break;
             default:
                 System.out.println("Ничего не выбрано или выбран неверный вариант.");

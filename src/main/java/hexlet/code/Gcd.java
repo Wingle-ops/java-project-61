@@ -8,7 +8,7 @@ public class Gcd {
     static int number1;
     static int number2;
 
-    public static void getGame(){
+    public static void getGame() {
         Scanner scan = new Scanner(System.in);
         int i = 0;
         int count = 3;
@@ -32,13 +32,13 @@ public class Gcd {
     }
 
     static int getGcd(int a, int b) {
-        if (a < b){
+        if (a < b) {
             int temp = a;
             a = b;
             b = temp;
         }
-        while (a%b != 0){
-            int temp = a%b;
+        while (a % b != 0) {
+            int temp = a % b;
             a = b;
             b = temp;
         }

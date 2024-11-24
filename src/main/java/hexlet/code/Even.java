@@ -13,10 +13,10 @@ public class Even {
 
         while (i < count) {
             int rand = randomNum();
-            String otvet = rand % 2 == 0 ? "yes" : "no";
+            String otvetStr = rand % 2 == 0 ? "yes" : "no";
             System.out.print("Question: " + rand + "\n" + "Yor answer: ");
-            String answer = scan.nextLine();
-            Engine.getEnd(otvet, answer);
+            String answerStr = scan.nextLine();
+            Engine.getEnd(otvetStr, answerStr);
             i++;
         }
         System.out.println("Congratulations, " + Cli.nameUser);
