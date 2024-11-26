@@ -10,11 +10,9 @@ build/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-.idea/
 *.vscode
 *.gradle
 *.idea
-*.gitignore
 *.cast
 *.rec
 *.iws
