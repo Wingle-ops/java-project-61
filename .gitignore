@@ -1,30 +1,28 @@
-idea/
-build
+.idea/
+build/
+.gradle/
+.vscode/
 
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Игнорировать временные файлы
+*.cast
+*.rec
 **/logs/
 
-### IntelliJ IDEA ###
+# Игнорировать файлы сборки
+**/src/main/**/build/
+**/src/test/**/build/
+**/src/main/**/out/
+**/src/test/**/out/
+**/src/main/**/bin/
+**/src/test/**/bin/
+
+# Игнорировать файлы конфигурации для IntelliJ IDEA
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-*.vscode
-.gradle
-*.idea
-*.cast
-*.rec
-*.iws
-*.iml
-*.ipr
-bin
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
-### Eclipse ###
+# Игнорировать файлы конфигурации для Eclipse
 .apt_generated
 .classpath
 .factorypath
@@ -32,19 +30,16 @@ out/
 .settings
 .springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
 
-### NetBeans ###
+# Игнорировать файлы конфигурации для NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+# Игнорировать файлы для Mac OS
 .DS_Store
+
+# Исключения
+!gradle/wrapper/gradle-wrapper.jar
