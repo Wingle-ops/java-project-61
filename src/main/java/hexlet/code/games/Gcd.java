@@ -1,7 +1,9 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
+import hexlet.code.Engine;
+import hexlet.code.Cli;
 
 public class Gcd {
 
@@ -19,6 +21,7 @@ public class Gcd {
             System.out.print("Your answer: ");
             String answerStr = scan.nextLine();
             String otvetStr = String.valueOf(getGcd(number1, number2));
+            Engine.testString(otvetStr, answerStr);
             Engine.getEnd(otvetStr, answerStr);
             i++;
         }

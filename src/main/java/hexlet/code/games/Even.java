@@ -1,11 +1,13 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
+import hexlet.code.Engine;
+import hexlet.code.Cli;
 
 public class Even {
 
-    static void getGame() {
+    public static void getGame() {
         int i = 0;
         int count = 3;
         Scanner scan = new Scanner(System.in);

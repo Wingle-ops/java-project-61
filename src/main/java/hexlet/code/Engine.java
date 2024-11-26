@@ -5,20 +5,21 @@ public class Engine {
     static String itsOtvet;
     static String itsAnswer;
 
-    static void getEnd(String otvet, String answer) {
+    public static void getEnd(String otvet, String answer) {
         itsOtvet = otvet;
         itsAnswer = answer;
 
-        testString(answer);
         if (otvet.equals(answer)) {
             System.out.println("Correct!");
         } else {
             noCorrect(otvet, answer);
         }
     }
-    static void testString(String string) {
-        for (int i = 0; i < string.length(); i++) {
-            if (!Character.isDigit(string.charAt(i))) {
+    public static void testString(String otvet, String answer) {
+        itsOtvet = otvet;
+        itsAnswer = answer;
+        for (int i = 0; i < answer.length(); i++) {
+            if (!Character.isDigit(answer.charAt(i))) {
                 noCorrect(itsOtvet, itsAnswer);
             }
         }

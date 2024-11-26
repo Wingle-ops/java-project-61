@@ -1,9 +1,11 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
+import hexlet.code.Engine;
+import hexlet.code.Cli;
 
-public class Progressia {
+public class Progression {
 
     static int otvet;
 
@@ -17,6 +19,7 @@ public class Progressia {
             System.out.print("Your answer: ");
             Scanner scan = new Scanner(System.in);
             String answerStr = scan.nextLine();
+            Engine.testString(otvetStr, answerStr);
             Engine.getEnd(otvetStr, answerStr);
             i++;
         }
