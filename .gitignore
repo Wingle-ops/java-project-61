@@ -1,9 +1,10 @@
-idea/
-build/
+.idea/
+build
 
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+**/logs/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -11,13 +12,14 @@ build/
 .idea/compiler.xml
 .idea/libraries/
 *.vscode
-*.gradle
+.gradle
 *.idea
 *.cast
 *.rec
 *.iws
 *.iml
 *.ipr
+bin
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
