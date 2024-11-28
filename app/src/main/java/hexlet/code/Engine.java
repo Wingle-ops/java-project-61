@@ -2,8 +2,8 @@ package hexlet.code;
 
 public class Engine {
 
-    static String itsOtvet;
-    static String itsAnswer;
+    private static String itsOtvet;
+    private static String itsAnswer;
 
     public static void getEnd(String otvet, String answer) {
         itsOtvet = otvet;
