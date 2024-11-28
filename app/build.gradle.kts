@@ -31,4 +31,4 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
+//tasks.jacocoTestReport { reports { xml.required.set(true) } }
