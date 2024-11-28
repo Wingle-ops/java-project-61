@@ -25,7 +25,7 @@ public class Gcd {
             Engine.getEnd(otvetStr, answerStr);
             i++;
         }
-        System.out.println("Congratulations, " + Cli.nameUser);
+        System.out.println("Congratulations, " + Cli.nameUser + "!");
     }
 
     static void randomNum() {
