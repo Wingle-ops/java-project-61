@@ -27,7 +27,7 @@ public class Engine {
 
     static void noCorrect(String otvet, String answer) {
         System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + otvet + "'");
-        System.out.println("Let's try again, " + Cli.nameUser);
+        System.out.println("Let's try again, " + Cli.nameUser + "!");
         System.exit(0);
     }
 }
