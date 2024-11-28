@@ -6,8 +6,8 @@ import hexlet.code.Cli;
 
 public class Gcd {
 
-    private static final int COUNT = 30;
-    private static final int RANDOM_RANGE = 5; // Максимальное рандомное число + 1
+    private static final int COUNT = 3;
+    private static final int RANDOM_RANGE = 31; // Максимальное рандомное число + 1
 
     public static void getGame() {
         Scanner scan = new Scanner(System.in);
