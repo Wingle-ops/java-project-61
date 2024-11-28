@@ -21,7 +21,7 @@ public class Prime {
             String otvetStr = isPrime(number);
             Engine.getEnd(otvetStr, answerStr);
         }
-        System.out.println("Congratulations, " + Cli.nameUser + "!");
+        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 
     static int getNumber() {

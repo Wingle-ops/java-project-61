@@ -31,7 +31,7 @@ public class Progression {
             Engine.testString(otvetStr, answerStr);
             Engine.getEnd(otvetStr, answerStr);
         }
-        System.out.println("Congratulations, " + Cli.nameUser + "!");
+        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 
     static String getProgressia(int a, int b, int propusk) {

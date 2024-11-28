@@ -22,7 +22,7 @@ public class Gcd {
             Engine.testString(otvetStr, answerStr);
             Engine.getEnd(otvetStr, answerStr);
         }
-        System.out.println("Congratulations, " + Cli.nameUser + "!");
+        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 
     static int randomNum() {
