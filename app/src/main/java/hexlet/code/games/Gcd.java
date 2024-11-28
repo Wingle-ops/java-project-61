@@ -1,21 +1,19 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import java.util.Scanner;
 import hexlet.code.Engine;
 import hexlet.code.Cli;
 
 public class Gcd {
 
-    static int number1;
-    static int number2;
+    private static final int COUNT = 3;
+    private static final int RANDOM_RANGE = 31; // Максимальное рандомное число + 1
 
     public static void getGame() {
         Scanner scan = new Scanner(System.in);
-        int i = 0;
-        int count = 3;
-        while (i < count) {
-            randomNum();
+        for (int i = 0; i < COUNT; i++) {
+            final int number1 = randomNum();
+            final int number2 = randomNum();
             System.out.println("Find the greatest common divisor of given numbers.");
             System.out.println("Question: " + number1 + " " + number2);
             System.out.print("Your answer: ");
@@ -23,15 +21,12 @@ public class Gcd {
             String otvetStr = String.valueOf(getGcd(number1, number2));
             Engine.testString(otvetStr, answerStr);
             Engine.getEnd(otvetStr, answerStr);
-            i++;
         }
         System.out.println("Congratulations, " + Cli.nameUser + "!");
     }
 
-    static void randomNum() {
-        Random rand = new Random();
-        number1 = rand.nextInt(10) + 1;
-        number2 = rand.nextInt(10) + 1;
+    static int randomNum() {
+        return (int) (Math.random() * RANDOM_RANGE);
     }
 
     static int getGcd(int a, int b) {

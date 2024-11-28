@@ -1,41 +1,44 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import java.util.Scanner;
 import hexlet.code.Engine;
 import hexlet.code.Cli;
 
 public class Progression {
 
-    static int otvet;
+    private static final int COUNT = 3;
+    private static final int MAX_INT = 21;
+    // Крайнее число, которое указывает границу диапазона (-1).
+    // То есть первое число прогрессии не может быть больше этого числа (-1)
+    private static final int PLUS_INT = 11;
+    // Тут выбирается число (-1), которое будет прибавляться к А. То-есть создавать диапазон.
+    // Например, если число А = 5, а число Б = 3, тогда прогрессия будет такая: 5,8,11,14...
+    private static final int ISCOMOE_CHISLO = 11;
+    // Число по значению, которое надо будет найти (-1).
 
     public static void getGame() {
-        int i = 0;
-        int count = 3;
-        while (i < count) {
+        for (int i = 0; i < COUNT; i++) {
+            final int aMaxInt = (int) (Math.random() * MAX_INT);
+            final int bPlusInt = (int) (Math.random() * PLUS_INT);
+            final int propusk = (int) (Math.random() * ISCOMOE_CHISLO);
+
             System.out.println("What number is missing in the progression?");
-            System.out.println("Question:" + getProgressia());
-            String otvetStr = String.valueOf(otvet);
+            System.out.println("Question:" + getProgressia(aMaxInt, bPlusInt, propusk));
+            String otvetStr = String.valueOf(getIskomoeChislo(aMaxInt, bPlusInt, propusk));
             System.out.print("Your answer: ");
             Scanner scan = new Scanner(System.in);
             String answerStr = scan.nextLine();
             Engine.testString(otvetStr, answerStr);
             Engine.getEnd(otvetStr, answerStr);
-            i++;
         }
         System.out.println("Congratulations, " + Cli.nameUser + "!");
     }
 
-    static String getProgressia() {
-        Random rand = new Random();
+    static String getProgressia(int a, int b, int propusk) {
         StringBuilder progressia = new StringBuilder();
-        int a = rand.nextInt(20) + 1;
-        int b = rand.nextInt(10) + 1;
-        int propusk = rand.nextInt(11);
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i < ISCOMOE_CHISLO; i++) {
             if (propusk == i) {
                 progressia.append(" ..");
-                otvet = a;
             } else {
                 progressia.append(" ").append(a);
             }
@@ -44,4 +47,17 @@ public class Progression {
         return progressia.toString();
     }
 
+    static int getIskomoeChislo(int a, int b, int propusk) {
+        StringBuilder progressia = new StringBuilder();
+        for (int i = 0; i < ISCOMOE_CHISLO; i++) {
+            if (propusk == i) {
+                progressia.append(" ..");
+                return a;
+            } else {
+                progressia.append(" ").append(a);
+            }
+            a += b;
+        }
+        return a;
+    }
 }

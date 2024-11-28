@@ -18,10 +18,9 @@ public class Engine {
     public static void testString(String otvet, String answer) {
         itsOtvet = otvet;
         itsAnswer = answer;
-        for (int i = 0; i < answer.length(); i++) {
-            if (!Character.isDigit(answer.charAt(i))) {
-                noCorrect(itsOtvet, itsAnswer);
-            }
+        String regex = "-?\\d+";
+        if (!answer.matches(regex)) {
+            noCorrect(itsOtvet, itsAnswer);
         }
     }
 
