@@ -33,9 +33,9 @@ public class Calc {
     static String getZnachenie() {
         int znach = Utils.getRandomNum(RANDOM_ZNACH);
         return switch (znach) {
-            case 1 -> "+";
-            case 2 -> "-";
-            case 3 -> "*";
+            case 0 -> "+";
+            case 1 -> "-";
+            case 2 -> "*";
             default -> "";
         };
     }
