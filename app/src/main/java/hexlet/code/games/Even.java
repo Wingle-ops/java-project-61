@@ -15,7 +15,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < COUNT; i++) {
-            int rand = Utils.getRandomNum(RANDOM_RANGE);
+            int rand = Utils.getRandomNum(RANDOM_RANGE) + 1; // Указываем 1 чтобы диапазон начинался с 1, а не с 0
             String otvetStr = rand % 2 == 0 ? "yes" : "no";
             System.out.print("Question: " + rand + "\n" + "Your answer: ");
             String answerStr = scan.nextLine();

@@ -9,15 +9,15 @@ public class Calc {
 
     private static final int COUNT = 3;
     private static final int RANDOM_RANGE = 10;
-    private static final int RANDOM_ZNACH = 2; //Значение от 0 до 2
+    private static final int RANDOM_ZNACH = 3;
 
     public static void getGame() {
         Scanner scan = new Scanner(System.in);
         System.out.println("What is the result of the expression?");
 
         for (int i = 0; i < COUNT; i++) {
-            final int number1 = Utils.getRandomNum(RANDOM_RANGE);
-            final int number2 = Utils.getRandomNum(RANDOM_RANGE);
+            final int number1 = Utils.getRandomNum(RANDOM_RANGE + 1);
+            final int number2 = Utils.getRandomNum(RANDOM_RANGE + 1);
             final String znachenie = getZnachenie();
 
             System.out.println("Question: " + number1 + " " + znachenie + " " + number2);

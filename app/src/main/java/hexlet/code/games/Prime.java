@@ -15,7 +15,8 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < COUNT; i++) {
-            final int number = Utils.getRandomNum(MAX_RANDOM_INT);
+            final int number = Utils.getRandomNum(MAX_RANDOM_INT) + 1; // Указываем 1 чтобы
+                                                                       // диапазон начинался с 1, а не с 0
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
             String answerStr = scan.nextLine();
@@ -26,7 +27,7 @@ public class Prime {
     }
 
     static String isPrime(int number) {
-        if (number < 2) {
+        if (number == 1) {
             return "no";
         }
         for (int i = 2; i <= number / 2; i++) {
