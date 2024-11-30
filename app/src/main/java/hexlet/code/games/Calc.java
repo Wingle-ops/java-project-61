@@ -9,7 +9,7 @@ public class Calc {
 
     private static final int COUNT = 3;
     private static final int RANDOM_RANGE = 10;
-    private static final int RANDOM_ZNACH = 3;
+    private static final int RANDOM_ZNACH = 2; //Значение от 0 до 2
 
     public static void getGame() {
         Scanner scan = new Scanner(System.in);
