@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Scanner;
 import hexlet.code.Engine;
 import hexlet.code.Cli;
+import hexlet.code.Utils;
 
 public class Progression {
 
@@ -18,10 +19,9 @@ public class Progression {
 
     public static void getGame() {
         for (int i = 0; i < COUNT; i++) {
-            final int aMaxInt = (int) (Math.random() * MAX_INT);
-            final int bPlusInt = (int) (Math.random() * PLUS_INT);
-            final int propusk = (int) (Math.random() * ISCOMOE_CHISLO);
-
+            final int aMaxInt = Utils.getRandomNum(MAX_INT);
+            final int bPlusInt = Utils.getRandomNum(PLUS_INT);
+            final int propusk = Utils.getRandomNum(ISCOMOE_CHISLO);
             System.out.println("What number is missing in the progression?");
             System.out.println("Question:" + getProgressia(aMaxInt, bPlusInt, propusk));
             String otvetStr = String.valueOf(getIskomoeChislo(aMaxInt, bPlusInt, propusk));
