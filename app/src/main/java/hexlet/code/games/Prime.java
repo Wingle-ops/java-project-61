@@ -20,7 +20,7 @@ public class Prime {
     }
 
     static String isPrime(int number) {
-        if (number <= 2) {
+        if (number < 2) {
             return "no";
         }
         for (int i = 2; i <= Math.sqrt(number); i++) {
