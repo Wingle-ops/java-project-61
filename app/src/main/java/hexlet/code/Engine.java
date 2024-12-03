@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static final int COUNT = 3; // Количество раундов игры
     private static int hello = 0;
     private static int count = 0;
 
@@ -22,7 +23,7 @@ public class Engine {
         }
         getEnd(trueAnswer, userAnswer); // получаем ответ программы на ответ пользователя
         count++;
-        if (count == Utils.COUNT) { // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
+        if (count == Engine.COUNT) { // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
             System.out.println("Congratulations, " + Cli.getNameUser() + "!");
         }
     }

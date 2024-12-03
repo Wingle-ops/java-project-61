@@ -10,7 +10,7 @@ public class Prime {
     private static final boolean GO_TEST_STRING = false; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        for (int i = 0; i < Utils.COUNT; i++) {
+        for (int i = 0; i < Engine.COUNT; i++) {
             final int number = Utils.getRandomNum(MIN_NUM, MAX_NUM);
             String trueAnswer = isPrime(number);
             String target = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -20,10 +20,10 @@ public class Prime {
     }
 
     static String isPrime(int number) {
-        if (number == 1) {
+        if (number <= 2) {
             return "no";
         }
-        for (int i = 2; i <= number / 2; i++) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return "no";
             }

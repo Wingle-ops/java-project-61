@@ -7,36 +7,27 @@ public class Calc {
 
     private static final int MIN_NUM = 0; // Минимальное рандомное число
     private static final int MAX_NUM = 10;  // Максимальное рандомное число
-    private static final int RANDOM_OPERATION = 3; //  Выбор операция для работы над числами
     private static final boolean GO_TEST_STRING = true; // Надо-ли проводить проверку строки на число
+    private static final char[] OPERATIONS = {'+', '-', '*'};
 
     public static void getGame() {
-        for (int i = 0; i < Utils.COUNT; i++) {
+        for (int i = 0; i < Engine.COUNT; i++) {
+            final int operationNum = Utils.getRandomNum(0, OPERATIONS.length - 1);
             final int number1 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается первое число
             final int number2 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается второе число
-            final String znachenie = getOperation(); // Выбирается операция для работы над числами
-            String trueAnswer = String.valueOf(getOtvet(number1, number2, znachenie));
+            final char operation = OPERATIONS[operationNum];
+            String trueAnswer = String.valueOf(getOtvet(number1, number2, operation));
             String target = "What is the result of the expression?";
-            String task = "Question: " + number1 + " " + znachenie + " " + number2;
+            String task = "Question: " + number1 + " " + operation + " " + number2;
             Engine.dataProcessing(trueAnswer, target, task, GO_TEST_STRING);
         }
     }
 
-    static String getOperation() {
-        int znach = Utils.getRandomNum(RANDOM_OPERATION);
-        return switch (znach) {
-            case 0 -> "+";
-            case 1 -> "-";
-            case 2 -> "*";
-            default -> "";
-        };
-    }
-
-    static int getOtvet(int number1, int number2, String znachenie) {
-        return switch (znachenie) {
-            case "+" -> number1 + number2;
-            case "-" -> number1 - number2;
-            case "*" -> number1 * number2;
+    static int getOtvet(int number1, int number2, char operation) {
+        return switch (operation) {
+            case '+' -> number1 + number2;
+            case '-' -> number1 - number2;
+            case '*' -> number1 * number2;
             default -> 0;
         };
     }

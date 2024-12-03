@@ -10,9 +10,9 @@ public class Even {
     private static final boolean GO_TEST_STRING = false; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        for (int i = 0; i < Utils.COUNT; i++) {
+        for (int i = 0; i < Engine.COUNT; i++) {
             int rand = Utils.getRandomNum(MIN_NUM, MAX_NUM);
-            String trueAnswer = rand % 2 == 0 ? "yes" : "no";
+            String trueAnswer = Utils.isBoolean(rand) ? "yes" : "no";
             String target = "Answer 'yes' if the number is even, otherwise answer 'no'.";
             String task = "Question: " + rand;
             Engine.dataProcessing(trueAnswer, target, task, GO_TEST_STRING);

@@ -15,7 +15,7 @@ public class Progression {
     private static final boolean GO_TEST_STRING = true; // Надо-ли проводить проверку строки на число.
 
     public static void getGame() {
-        for (int i = 0; i < Utils.COUNT; i++) {
+        for (int i = 0; i < Engine.COUNT; i++) {
             final int lengthProg = Utils.getRandomNum(MIN_LENGTH_PROG, MAX_LENGTH_PROG);
             // Выбирается длина прогрессии
             final int startProg = Utils.getRandomNum(MIN_FIRST_INT, MAX_FIRST_INT);

@@ -10,7 +10,7 @@ public class Gcd {
     private static final boolean GO_TEST_STRING = true; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        for (int i = 0; i < Utils.COUNT; i++) {
+        for (int i = 0; i < Engine.COUNT; i++) {
             final int number1 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается первое число
             final int number2 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается второе число
             String trueAnswer = String.valueOf(getGcd(number1, number2));
