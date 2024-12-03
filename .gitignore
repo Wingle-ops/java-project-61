@@ -12,6 +12,7 @@ bin
 .project*
 .classpath
 .idea/
+app/README.md
 *.iws
 *.iml
 *.ipr

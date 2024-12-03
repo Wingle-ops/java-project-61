@@ -1,27 +1,21 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 import hexlet.code.Engine;
-import hexlet.code.Cli;
 import hexlet.code.Utils;
 
 public class Even {
 
-    private static final int COUNT = 3;
-    private static final int RANDOM_RANGE = 10; // Максимальное рандомное число
+    private static final int MIN_NUM = 0; // Минимальное рандомное число
+    private static final int MAX_NUM = 30;  // Максимальное рандомное число
+    private static final boolean goTestString = false; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
-        for (int i = 0; i < COUNT; i++) {
-            int rand = Utils.getRandomNum(RANDOM_RANGE) + 1; // Указываем 1 чтобы диапазон начинался с 1, а не с 0
-            String otvetStr = rand % 2 == 0 ? "yes" : "no";
-            System.out.print("Question: " + rand + "\n" + "Your answer: ");
-            String answerStr = scan.nextLine();
-            Engine.getEnd(otvetStr, answerStr);
+        for (int i = 0; i < Utils.count; i++) {
+            int rand = Utils.getRandomNum(MIN_NUM, MAX_NUM);
+            String trueAnswer = rand % 2 == 0 ? "yes" : "no";
+            String target = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+            String task = "Question: " + rand;
+            Engine.dataProcessing(trueAnswer, target, task, goTestString);
         }
-        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
-
 }

@@ -1,29 +1,23 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 import hexlet.code.Engine;
-import hexlet.code.Cli;
 import hexlet.code.Utils;
 
 public class Gcd {
 
-    private static final int COUNT = 3;
-    private static final int RANDOM_RANGE = 30;
+    private static final int MIN_NUM = 0; // Минимальное рандомное число
+    private static final int MAX_NUM = 30;  // Максимальное рандомное число
+    private static final boolean goTestString = true; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < COUNT; i++) {
-            final int number1 = Utils.getRandomNum(RANDOM_RANGE) + 1; // Указываем 1 чтобы диапазон
-            final int number2 = Utils.getRandomNum(RANDOM_RANGE) + 1; // начинался с 1, а не с 0
-            System.out.println("Find the greatest common divisor of given numbers.");
-            System.out.println("Question: " + number1 + " " + number2);
-            System.out.print("Your answer: ");
-            String answerStr = scan.nextLine();
-            String otvetStr = String.valueOf(getGcd(number1, number2));
-            Engine.testString(otvetStr, answerStr);
-            Engine.getEnd(otvetStr, answerStr);
+        for (int i = 0; i < Utils.count; i++) {
+            final int number1 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается первое число
+            final int number2 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается второе число
+            String trueAnswer = String.valueOf(getGcd(number1, number2));
+            String target = "Find the greatest common divisor of given numbers.";
+            String task = "Question: " + number1 + " " + number2;
+            Engine.dataProcessing(trueAnswer, target, task, goTestString);
         }
-        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 
     static int getGcd(int a, int b) {

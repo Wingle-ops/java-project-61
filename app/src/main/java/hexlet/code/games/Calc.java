@@ -1,52 +1,43 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 import hexlet.code.Engine;
-import hexlet.code.Cli;
 import hexlet.code.Utils;
 
 public class Calc {
 
-    private static final int COUNT = 3;
-    private static final int RANDOM_RANGE = 10;
-    private static final int RANDOM_ZNACH = 3;
+    private static final int MIN_NUM = 0; // Минимальное рандомное число
+    private static final int MAX_NUM = 10;  // Максимальное рандомное число
+    private static final int RANDOM_OPERATION = 3; //  Выбор операция для работы над числами
+    private static final boolean goTestString = true; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("What is the result of the expression?");
-
-        for (int i = 0; i < COUNT; i++) {
-            final int number1 = Utils.getRandomNum(RANDOM_RANGE + 1);
-            final int number2 = Utils.getRandomNum(RANDOM_RANGE + 1);
-            final String znachenie = getZnachenie();
-
-            System.out.println("Question: " + number1 + " " + znachenie + " " + number2);
-            System.out.print("Your answer: ");
-            String answerStr = scan.nextLine();
-            String otvetStr = String.valueOf(getOtvet(number1, number2, znachenie));
-            Engine.testString(otvetStr, answerStr);
-            Engine.getEnd(otvetStr, answerStr);
+        for (int i = 0; i < Utils.count; i++) {
+            final int number1 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается первое число
+            final int number2 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается второе число
+            final String znachenie = getOperation(); // Выбирается операция для работы над числами
+            String trueAnswer = String.valueOf(getOtvet(number1, number2, znachenie));
+            String target = "What is the result of the expression?";
+            String task = "Question: " + number1 + " " + znachenie + " " + number2;
+            Engine.dataProcessing(trueAnswer, target, task, goTestString);
         }
-        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 
-    static String getZnachenie() {
-        int znach = Utils.getRandomNum(RANDOM_ZNACH);
+    static String getOperation() {
+        int znach = Utils.getRandomNum(1, RANDOM_OPERATION);
         return switch (znach) {
-            case 0 -> "+";
-            case 1 -> "-";
-            case 2 -> "*";
+            case 1 -> "+";
+            case 2 -> "-";
+            case 3 -> "*";
             default -> "";
         };
     }
 
     static int getOtvet(int number1, int number2, String znachenie) {
-        if (znachenie.equals("+")) {
-            return number1 + number2;
-        } else if (znachenie.equals("-")) {
-            return number1 - number2;
-        } else {
-            return number1 * number2;
-        }
+        return switch (znachenie) {
+            case "+" -> number1 + number2;
+            case "-" -> number1 - number2;
+            case "*" -> number1 * number2;
+            default -> 0;
+        };
     }
 }

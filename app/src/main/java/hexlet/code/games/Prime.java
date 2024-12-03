@@ -1,29 +1,22 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
 import hexlet.code.Engine;
-import hexlet.code.Cli;
 import hexlet.code.Utils;
 
 public class Prime {
 
-    private static final int COUNT = 3;
-    private static final int MAX_RANDOM_INT = 30;
+    private static final int MIN_NUM = 0; // Минимальное рандомное число
+    private static final int MAX_NUM = 30;  // Максимальное рандомное число
+    private static final boolean goTestString = false; // Надо-ли проводить проверку строки на число
 
     public static void getGame() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        for (int i = 0; i < COUNT; i++) {
-            final int number = Utils.getRandomNum(MAX_RANDOM_INT) + 1; // Указываем 1 чтобы
-                                                                       // диапазон начинался с 1, а не с 0
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            String answerStr = scan.nextLine();
-            String otvetStr = isPrime(number);
-            Engine.getEnd(otvetStr, answerStr);
+        for (int i = 0; i < Utils.count; i++) {
+            final int number = Utils.getRandomNum(MIN_NUM, MAX_NUM);
+            String trueAnswer = isPrime(number);
+            String target = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+            String task = "Question: " + number;
+            Engine.dataProcessing(trueAnswer, target, task, goTestString);
         }
-        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 
     static String isPrime(int number) {
