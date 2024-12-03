@@ -17,13 +17,14 @@ public class Engine {
         System.out.println(task); // Выводится пример для решения
         System.out.print("Your answer: ");
         String userAnswer = scan.nextLine(); // Пользователь пишет свой ответ
-        if (goTestString) // если требуется проверка строки на число, тогда данные отправляютя в метод
+        if (goTestString) { // если требуется проверка строки на число, тогда данные отправляютя в метод
             Utils.testString(trueAnswer, userAnswer);
+        }
         getEnd(trueAnswer, userAnswer); // получаем ответ программы на ответ пользователя
         count++;
-        if (count == 3) // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
+        if (count == 3) { // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
             System.out.println("Congratulations, " + Cli.getNameUser() + "!");
-
+        }
     }
 
     public static void getEnd(String trueAnswer, String userAnswer) {
@@ -36,7 +37,7 @@ public class Engine {
     }
 
     static void noCorrect(String otvet, String answer) {
-        System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + otvet + "'");
+        System.out.println("\n'" + answer + "' is wrong answer ;(. Correct answer was '" + otvet + "'");
         System.out.println("Let's try again, " + Cli.getNameUser() + "!");
         System.exit(0);
     }

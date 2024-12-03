@@ -27,7 +27,7 @@ public class App {
         gameStart(num);
     }
 
-    static void gameStart(String num){
+    static void gameStart(String num) {
         switch (num) {
             case "0" -> System.exit(0);
             case "1" -> Cli.greeting();
