@@ -21,7 +21,7 @@ public class Prime {
 
     static String isPrime(int number) {
         if (number < 2) {
-            return "no";
+            return "yes";
         }
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
