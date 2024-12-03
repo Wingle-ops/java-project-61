@@ -9,7 +9,7 @@ public class Utils {
     }
 
     public static int getRandomNum(int randomNum) {
-        return (int) (Math.random() * (3));
+        return (int) (Math.random() * (randomNum));
     }
 
     public static void testString(String trueAnswer, String userAnswer) {
