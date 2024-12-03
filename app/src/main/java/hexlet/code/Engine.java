@@ -22,7 +22,7 @@ public class Engine {
         }
         getEnd(trueAnswer, userAnswer); // получаем ответ программы на ответ пользователя
         count++;
-        if (count == 3) { // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
+        if (count == Utils.COUNT) { // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
             System.out.println("Congratulations, " + Cli.getNameUser() + "!");
         }
     }

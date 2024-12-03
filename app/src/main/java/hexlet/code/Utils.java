@@ -8,6 +8,10 @@ public class Utils {
         return (int) (Math.random() * (maxNum - minNum + 1)) + minNum;
     }
 
+    public static int getRandomNum(int randomNum) {
+        return (int) (Math.random() * (3));
+    }
+
     public static void testString(String trueAnswer, String userAnswer) {
         String regex = "-?\\d+";
         if (!userAnswer.matches(regex)) {

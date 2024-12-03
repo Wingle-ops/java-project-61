@@ -23,11 +23,11 @@ public class Calc {
     }
 
     static String getOperation() {
-        int znach = Utils.getRandomNum(1, RANDOM_OPERATION);
+        int znach = Utils.getRandomNum(RANDOM_OPERATION);
         return switch (znach) {
-            case 1 -> "+";
-            case 2 -> "-";
-            case 3 -> "*";
+            case 0 -> "+";
+            case 1 -> "-";
+            case 2 -> "*";
             default -> "";
         };
     }
