@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class Gcd {
 
-    private static final int MIN_NUM = 0; // Минимальное рандомное число
+    private static final int MIN_NUM = 1; // Минимальное рандомное число
     private static final int MAX_NUM = 30;  // Максимальное рандомное число
     private static final boolean GO_TEST_STRING = true; // Надо-ли проводить проверку строки на число
 
