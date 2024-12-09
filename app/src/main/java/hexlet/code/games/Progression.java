@@ -14,7 +14,7 @@ public class Progression {
     private static final int MIN_UNKNOWN_NUMBER = 0;  // Минимальное число по индексу, которое необходимо будет найти.
 
     public static void getGame() {
-        String target = "What is the result of the expression?";
+        String target = "What number is missing in the progression";
         String[][] dataGame = new String[Engine.COUNT][Engine.DATA];
         for (int i = 0; i < Engine.COUNT; i++) {
             final int lengthProg = Utils.getRandomNum(MIN_LENGTH_PROG, MAX_LENGTH_PROG);
