@@ -12,9 +12,10 @@ public class Progression {
     private static final int MIN_LENGTH_PROG = 5;  // Выбирается длина прогрессии.
     private static final int MAX_LENGTH_PROG = 10;
     private static final int MIN_UNKNOWN_NUMBER = 0;  // Минимальное число по индексу, которое необходимо будет найти.
-    private static final boolean GO_TEST_STRING = true; // Надо-ли проводить проверку строки на число.
 
     public static void getGame() {
+        String target = "What is the result of the expression?";
+        String[][] dataGame = new String[Engine.COUNT][Engine.DATA];
         for (int i = 0; i < Engine.COUNT; i++) {
             final int lengthProg = Utils.getRandomNum(MIN_LENGTH_PROG, MAX_LENGTH_PROG);
             // Выбирается длина прогрессии
@@ -24,33 +25,28 @@ public class Progression {
             // Выбирается шаг прогрессии.
             final int unknownNum = Utils.getRandomNum(MIN_UNKNOWN_NUMBER, lengthProg - 1);
             // Выбирается индекс числа, которого нужно будет найти.
-            String trueAnswer = String.valueOf(getUnknownNumber(startProg, stepProg, unknownNum, lengthProg));
-            String target = "What number is missing in the progression?";
-            String task = "Question:" + getProgressia(startProg, stepProg, unknownNum, lengthProg);
-            Engine.dataProcessing(trueAnswer, target, task, GO_TEST_STRING);
+            dataGame[i][0] = getProgressia(startProg, stepProg, unknownNum, lengthProg);
+            // Получаем пример для решения
+            dataGame[i][1] = getUnknownNumber(startProg, stepProg, unknownNum, lengthProg);
+            // Получаем правильный ответ
         }
+        Engine.dataProcessing(dataGame, target);
     }
 
     static String getProgressia(int startProg, int stepProg, int unknownNum, int lengthProg) {
-        StringBuilder progressia = new StringBuilder();
-        for (int i = 0; i < lengthProg; i++) {
-            if (i == unknownNum) {
-                progressia.append(" ..");
-            } else {
-                progressia.append(" ").append(startProg);
-            }
-            startProg += stepProg;
+        String[] progression = new String[lengthProg];
+        for (int num = 0; num < lengthProg; num++) {
+            progression[num] = String.valueOf(startProg + num * stepProg);
         }
-        return progressia.toString();
+        progression[unknownNum] = "..";
+        return String.join(" ", progression);
     }
 
-    static int getUnknownNumber(int startProg, int stepProg, int unknownNum, int lengthProg) {
-        for (int i = 0; i < lengthProg; i++) {
-            if (i == unknownNum) {
-                return startProg;
-            }
-            startProg += stepProg;
+    static String getUnknownNumber(int startProg, int stepProg, int unknownNum, int lengthProg) {
+        String[] progression = new String[lengthProg];
+        for (int num = 0; num < lengthProg; num++) {
+            progression[num] = String.valueOf(startProg + num * stepProg);
         }
-        return startProg;
+        return progression[unknownNum];
     }
 }

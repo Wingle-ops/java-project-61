@@ -2,6 +2,7 @@ plugins {
     application
     jacoco
     checkstyle
+    id("io.freefair.lombok") version "8.4"
 }
 
 group = "hexlet.code"
@@ -12,10 +13,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation(platform("org.junit:junit-bom:5.10.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-
-
+    compileOnly("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
 }
 
 tasks.test {
@@ -30,4 +31,4 @@ tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }
 
-//tasks.jacocoTestReport { reports { xml.required.set(true) } }
+tasks.jacocoTestReport { reports { xml.required.set(true) } }

@@ -5,41 +5,25 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int COUNT = 3; // Количество раундов игры
-    private static int hello = 0;
-    private static int count = 0;
+    public static final int DATA = 2; // Количество типов данных, которые будем получать
 
-    public static void dataProcessing(String trueAnswer, String target, String task, boolean goTestString) {
+    public static void dataProcessing(String[][] dataGame, String target) {
         Scanner scan = new Scanner(System.in);
-        if (hello == 0) { // Приветствуем пользователя и описываем цель игры при запуске
-            Cli.greeting();
-            System.out.println(target);
-            hello += 1;
-        }
-        System.out.println(task); // Выводится пример для решения
-        System.out.print("Your answer: ");
-        String userAnswer = scan.nextLine(); // Пользователь пишет свой ответ
-        if (goTestString) { // если требуется проверка строки на число, тогда данные отправляютя в метод
-            Utils.testString(trueAnswer, userAnswer);
-        }
-        getEnd(trueAnswer, userAnswer); // получаем ответ программы на ответ пользователя
-        count++;
-        if (count == Engine.COUNT) { // Если пользователь дал 3 верных овета, то его поздравляют с завершением игры
-            System.out.println("Congratulations, " + Cli.getNameUser() + "!");
-        }
-    }
+        Cli.greeting();
+        System.out.println(target);
 
-    public static void getEnd(String trueAnswer, String userAnswer) {
-
-        if (trueAnswer.equals(userAnswer)) {
-            System.out.println("Correct!");
-        } else {
-            noCorrect(trueAnswer, userAnswer);
+        for (String[] test : dataGame) {
+            System.out.println("Question: " + test[0]); // Выводится пример для решения
+            System.out.print("Your answer: ");
+            String userAnswer = scan.nextLine(); // Пользователь пишет свой ответ
+            if (test[1].equals(userAnswer)) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("\n'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + test[1] + "'");
+                System.out.println("Let's try again, " + Cli.getNameUser() + "!");
+                return;
+            }
         }
-    }
-
-    static void noCorrect(String otvet, String answer) {
-        System.out.println("\n'" + answer + "' is wrong answer ;(. Correct answer was '" + otvet + "'");
-        System.out.println("Let's try again, " + Cli.getNameUser() + "!");
-        System.exit(0);
+        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
     }
 }
