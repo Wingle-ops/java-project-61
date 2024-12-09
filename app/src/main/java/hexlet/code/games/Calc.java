@@ -13,11 +13,13 @@ public class Calc {
         String target = "What is the result of the expression?";
         String[][] dataGame = new String[Engine.COUNT][Engine.DATA];
         for (int i = 0; i < dataGame.length; i++) {
-            final char operation = (char) (OPERATIONS.length - 1); // Выбирается действие над числами
+            final int operation = Utils.getRandomNum(0, OPERATIONS.length - 1); // Выбирается действие над числами
             final int number1 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается первое число
             final int number2 = Utils.getRandomNum(MIN_NUM, MAX_NUM); // Выбирается второе число
-            dataGame[i][0] = number1 + " " + operation + " " + number2; // Получаем пример для решения
-            dataGame[i][1] = String.valueOf(getOtvet(number1, number2, operation)); // Получаем правильный ответ
+            dataGame[i][0] = number1 + " " + OPERATIONS[operation] + " " + number2;
+            // Получаем пример для решения
+            dataGame[i][1] = String.valueOf(getOtvet(number1, number2, OPERATIONS[operation]));
+            // Получаем правильный ответ
         }
         Engine.dataProcessing(dataGame, target);
     }
