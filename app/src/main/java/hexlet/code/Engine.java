@@ -11,7 +11,6 @@ public class Engine {
         Scanner scan = new Scanner(System.in);
         Cli.greeting();
         System.out.println(target);
-
         for (String[] test : dataGame) {
             System.out.println("Question: " + test[0]); // Выводится пример для решения
             System.out.print("Your answer: ");
