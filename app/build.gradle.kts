@@ -1,8 +1,9 @@
 plugins {
+//    id("com.github.ben-manes.versions" version "0.48.0")
     application
     jacoco
     checkstyle
-    id("io.freefair.lombok") version "8.4"
+//    id("io.freefair.lombok") version "8.4"
 }
 
 group = "hexlet.code"
