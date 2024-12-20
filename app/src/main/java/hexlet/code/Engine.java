@@ -8,21 +8,30 @@ public class Engine {
     public static final int DATA = 2; // Количество типов данных, которые будем получать
 
     public static void dataProcessing(String[][] dataGame, String target) {
-        Scanner scan = new Scanner(System.in);
-        Cli.greeting();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
         System.out.println(target);
         for (String[] test : dataGame) {
             System.out.println("Question: " + test[0]); // Выводится пример для решения
             System.out.print("Your answer: ");
-            String userAnswer = scan.nextLine(); // Пользователь пишет свой ответ
+            String userAnswer = scanner.nextLine(); // Пользователь пишет свой ответ
             if (test[1].equals(userAnswer)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("\n'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + test[1] + "'");
-                System.out.println("Let's try again, " + Cli.getNameUser() + "!");
+                System.out.println("Let's try again, " + name + "!");
                 return;
             }
         }
-        System.out.println("Congratulations, " + Cli.getNameUser() + "!");
+        System.out.println("Congratulations, " + name + "!");
+    }
+
+    static void greeting() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
+        String nameHi = scan.nextLine();
+        System.out.println("Hello, " + nameHi + "!");
     }
 }
