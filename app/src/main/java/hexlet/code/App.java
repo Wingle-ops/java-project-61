@@ -30,7 +30,7 @@ public class App {
     static void gameStart(String num) {
         switch (num) {
             case "0" -> System.exit(0);
-            case "1" -> Engine.greeting();
+            case "1" -> Greeting.greet();
             case "2" -> Even.getGame();
             case "3" -> Calc.getGame();
             case "4" -> Gcd.getGame();
