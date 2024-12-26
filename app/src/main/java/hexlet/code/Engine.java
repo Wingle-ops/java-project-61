@@ -9,7 +9,7 @@ public class Engine {
 
     public static void dataProcessing(String[][] dataGame, String target) {
         Scanner scanner = new Scanner(System.in);
-        String name = Greeting.greet();
+        String name = greet();
         System.out.println(target);
         for (String[] test : dataGame) {
             System.out.println("Question: " + test[0]); // Выводится пример для решения
@@ -24,5 +24,13 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + name + "!");
+    }
+
+    static String greet() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
+        String name = scan.nextLine();
+        System.out.println("Hello, " + name + "!");
+        return name;
     }
 }

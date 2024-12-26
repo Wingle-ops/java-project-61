@@ -25,21 +25,22 @@ public class Progression {
             // Выбирается шаг прогрессии.
             final int unknownNum = Utils.getRandomNum(MIN_UNKNOWN_NUMBER, lengthProg - 1);
             // Выбирается индекс числа, которого нужно будет найти.
-            String[] result = getProgressia(startProg, stepProg, unknownNum, lengthProg);
-            dataGame[i][0] = result[0]; // Получаем пример для решения
-            dataGame[i][1] = result[1]; // Получаем правильный ответ
+            String[] progressia = getProgressia(startProg, stepProg, lengthProg); // Получаем прогрессию.
+            String unknownNumber = progressia[unknownNum]; // Получаем неизвестное число.
+            progressia[unknownNum] = ".."; // Заменяем элемент на "..".
+            String taskProg = String.join(" ", progressia); // Преобразуем в строку
+
+            dataGame[i][0] = taskProg; // Получаем пример для решения
+            dataGame[i][1] = unknownNumber; // Получаем правильный ответ
         }
         Engine.dataProcessing(dataGame, target);
     }
 
-    static String[] getProgressia(int startProg, int stepProg, int unknownNum, int lengthProg) {
+    static String[] getProgressia(int startProg, int stepProg, int lengthProg) {
         String[] progression = new String[lengthProg];
         for (int num = 0; num < lengthProg; num++) {
             progression[num] = String.valueOf(startProg + num * stepProg);
         }
-        String unknownNumber = progression[unknownNum];
-        progression[unknownNum] = "..";
-        String progressionString = String.join(" ", progression);
-        return new String[]{progressionString, unknownNumber};
+        return progression;
     }
 }
