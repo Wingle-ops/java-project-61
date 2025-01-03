@@ -25,7 +25,6 @@ public class Engine {
         }
         System.out.println("Congratulations, " + name + "!");
     }
-
     static String greet() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
